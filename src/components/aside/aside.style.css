@@ -1,0 +1,26 @@
+.airplane-bg{ 
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    background-color: rgb(185, 16, 16);
+}
+.airplane-bg_content{
+    font-size: 3.5rem;
+    padding: 8rem 0rem 0rem 9rem;
+    text-transform: uppercase;
+    width: 50rem;
+    margin: 0;
+    color: white;
+}
+.airplane-bg::before{
+    content: "";
+    background-image: url("../../assets/airplane.webp");
+    opacity: 0.2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}

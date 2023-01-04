@@ -1,0 +1,35 @@
+.hero-container{
+    background-image: url("../../assets/truck-blue.jpg");
+    background-size:100%;
+    background-position: bottom;    
+    background-repeat: no-repeat;
+    min-height: 95vh;
+    /* border: 3px solid yellow ; */
+}
+.hero-description{
+    padding: 12% 0 0 7%;
+}
+.hero-description .company-name{
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 2.5rem;
+    padding: 0;
+    margin: 0;
+    color: var(--verse-red);
+}
+.welcome-message{
+    max-width: 45%;
+}
+.welcome-message p {
+    font-family: Noto serif;
+    font-weight: 100;
+     margin: 5px;
+    font-size: 4rem;
+    color: black; 
+    z-index: 1000;
+}
+.welcome-message p div{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 10px auto;
+}
+

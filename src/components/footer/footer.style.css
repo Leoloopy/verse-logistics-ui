@@ -1,0 +1,32 @@
+.footer-bg{
+    display: flex;;
+    justify-content: center;
+    color: white;
+    background-color: rgb(47, 45, 45);
+    height: 50vh;
+    margin-top:2px ;
+}
+
+.footer-bg .footer-title{
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: Roboto;
+    padding-top: 15%;
+}
+.footer-title::before{
+    content: "<< ";
+}
+.footer-title::after{
+    content: " >> ";
+}
+
+.footer-bg p{
+    font-size: 13pt;
+    /* text-align; */
+}
+.footer-container{
+    text-align: center;
+    width: 60%;
+    line-height: 1.5;
+}

@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: center;
+    column-gap: 70px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.header li{
+    list-style-type:none ;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: 500;
+    color: white;
+}
+.verse-logo{
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,23 @@
+.freight-images{
+    max-width: 30px;
+}
+.logistics-options{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 10rem ;
+}
+.options{
+    max-width: 30rem;
+    max-height:30rem ;
+    overflow: hidden;
+}
+.options img{
+    width: 70%;
+    height: 70%;
+}
+.freight-tag{
+    padding:0 5px auto;
+    width: 70%;
+    text-align: center;
+    text-transform: capitalize;
+}
