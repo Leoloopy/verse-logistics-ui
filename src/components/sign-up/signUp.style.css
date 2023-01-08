@@ -1,0 +1,73 @@
+.sign-up-page-structure{
+   margin: 2% 26% auto;
+}
+.sign-up-page-structure p{
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 2rem;
+    text-align: center;
+    margin: 2px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.sign-up-container{
+    display: flex;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.logo-background{
+    background:linear-gradient(#B73437,  rgb(109, 43, 43));
+    border-radius: 20px 0px 0px 20px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48%;
+}
+
+.logo-background img{
+    width: 150px;
+}
+.form-section{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 50%;
+   border-radius: 0px 20px 20px 0px ;
+    border: 1px solid #B73437;
+}
+
+.form-section div{
+padding: 5px;
+}
+.form label{
+    text-align: left;
+}
+.form-section span{
+    padding: 10px;
+    font-family: Roboto;
+    font-weight: 100;
+    width: 90px;
+    display: inline-block;
+}
+
+input{
+    outline: none;
+    padding: 10px;
+    border: 1px solid rgba(50, 100, 255, 0.3);
+    border-radius: 5px;
+}
+.form-submit{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    margin: 3px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.form-submit:hover{
+    background-color: var(--verse-red);
+    transition: 0.55s;
+    color: white;
+}

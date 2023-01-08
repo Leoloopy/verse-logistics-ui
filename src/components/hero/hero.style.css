@@ -4,7 +4,6 @@
     background-position: bottom;    
     background-repeat: no-repeat;
     min-height: 95vh;
-    /* border: 3px solid yellow ; */
 }
 .hero-description{
     padding: 12% 0 0 7%;
@@ -18,7 +17,7 @@
     color: var(--verse-red);
 }
 .welcome-message{
-    max-width: 45%;
+    max-width: 50%;
 }
 .welcome-message p {
     font-family: Noto serif;
