@@ -3,35 +3,63 @@ import "./signUp.style.css";
 import verse from "../../assets/verse-white-logo.png";
 import Footer from "../footer/footer.component";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
   
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [address, setAddress] = useState({
-    "city":"",
-    "country":"",
-    "street":"",
-    "state":"",
+  const [userData, setUserData] = useState({
+    firstName:"",
+    lastName:"",
+    email:"",
+    password:"",
+    phoneNumber:"",
+    city:"",
+    country:"",
+    street:"",
+    state:"",
   })
+
+  const handleChange = (event) => {
+      const {name , value} = event.target;
+      setUserData(prevValue =>{
+        return {
+          ...prevValue, 
+          [name]:value
+        }
+      })
+  }
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = {firstName, lastName, email, password, phoneNumber, address }
-
-    fetch("http://localhost/users/senders/register-user", {
+    const user = { 
+      "firstName": userData.firstName,
+      "lastName":userData.lastName,
+      "email":userData.email,  
+      "password":userData.password,
+      "phoneNumber":userData.phoneNumber,
+      "address": {
+        "city":userData.city,
+        "country": userData.country,
+        "street": userData.street,
+        "state": userData.state
+      },
+    };
+    
+    console.log(user)
+    fetch("http://localhost:8080/users/senders/register-user", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify(user),
-    }).then(() => {
-      console.log("new blog added");
-    });
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((err) => console.log(err));
+      navigate("/home")
   }
 
     return (
@@ -43,77 +71,42 @@ const SignUp = () => {
             </div>
             <div className="form-section">
               <p>Create Account</p>
-              <form onSubmit={handleSubmit}>
+
+              <form>
                 <section>
                   <div>
                     <label htmlFor="firstname">
                       <span>First Name:</span>
-                      <input
-                        required
-                        type="text"
-                        id="Fname"
-                        name="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                      />
+                      <input required type="text" id="Fname" name="firstName" value={userData.firstName} onChange={handleChange}/>
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="lastName">
                       <span>Last Name:</span>
-                      <input
-                        required
-                        type="text"
-                        id="Lname"
-                        name="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                      />
+                      <input required type="text" id="Lname" name="lastName" value={userData.lastName} onChange={handleChange} />
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="email">
                       <span>Email:</span>
-                      <input
-                        required
-                        type="email"
-                        id="mail"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
+                      <input required type="email" id="mail" name="email" value={userData.email} onChange={handleChange}/>
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="password">
                       <span>Password:</span>
-                      <input
-                        required
-                        title="Enter at least more than four lettets"
-                        type="password"
-                        id="password"
-                        name="password"
-                        pattern="[0-9a-fA-F]{4,8}"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
+                      <input required title="Enter at least more than four lettets" type="password" id="password" name="password" pattern="[0-9a-fA-F]{4,8}"
+                      value={userData.password} onChange={handleChange} />
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="phone Number">
                       <span>Phone Number:</span>
-                      <input
-                      required
-                        type="number"
-                        id="phone"
-                        name="phoneNumber"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                      />
+                      <input required type="number" id="phone" name="phoneNumber" value={userData.phoneNumber} onChange={handleChange}/>
                     </label>
                   </div>
                 </section>
@@ -122,60 +115,32 @@ const SignUp = () => {
                   <div>
                     <label htmlFor="city">
                       <span>City:</span>
-                      <input
-                      required
-                        type="text"
-                        id="city"
-                        name="city"
-                        value={address.city}
-                        onChange={(e) => setAddress(e.target.value)}
-                      />
+                      <input required type="text" id="city" name="city" value={userData.city} onChange={handleChange} />
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="state">
                       <span>State:</span>
-                      <input
-                      required
-                        type="text"
-                        id="state"
-                        name="state"
-                        value={address.state}
-                        onChange={(e) => setAddress(e.target.value)}
-                      />
+                      <input required type="text" id="state" name="state" value={userData.state} onChange={handleChange} />
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="street">
                       <span> Street:</span>
-                      <input
-                      required
-                        type="street"
-                        id="street"
-                        name="street"
-                        value={address.street}
-                        onChange={(e) => setAddress(e.target.value)}
-                      />
+                      <input required type="street" id="street" name="street" value={userData.street} onChange={handleChange}/>
                     </label>
                   </div>
 
                   <div>
                     <label htmlFor="country">
                       <span>Country:</span>
-                      <input
-                      required
-                        type="country"
-                        id="country"
-                        name="country"
-                        value={address.country}
-                        onChange={(e) => setAddress(e.target.value)}
-                      />
+                      <input required type="country" id="country" name="country" value={userData.country} onChange={handleChange}/>
                     </label>
                   </div>
                 </section>
-                <button className="form-submit">Submit</button>
+                <button className="form-submit" onClick={handleSubmit}>Submit</button>
               </form>
             </div>
           </div>

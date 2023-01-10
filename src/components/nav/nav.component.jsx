@@ -6,19 +6,19 @@ import "./nav.styles.css";
 const Header  = () => {
     return (
       <Fragment>
-        <diV className="header">
+        <div className="header">
           <img src={verse} alt="verse-logo" className="verse-logo" />
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <li>home</li>
           </Link>
           <Link to={"/nav/signup"}>
             <li>sign up</li>
           </Link>
-          <Link to={"/login"}>
+          <Link to={"/nav/login"}>
             <li>log in</li>
           </Link>
-        </diV>
-        <Outlet />
+        </div>
+         <Outlet />
       </Fragment>
     );
 
